@@ -1,0 +1,10 @@
+Licesning Information - pythonfuzz
+
+This library has dual license.
+
+For non-commercial usage - APACHE 2.0 as described at LIECNSE.APACHE2
+For commercial usage - either APACHE 2.0 or AGPL v3.0 depending on the following:
+1) If this is used just as testing framework for either commercial software or non-commercial software the licensing is APACHE 2.0
+(which is essentially what this library is inteded for).
+2) If this library is reselled/used as software as a service, for example by a CI provider it will be either AGPL v3.0 or will have to get a commercial license via contract with fuzzit.dev
+
