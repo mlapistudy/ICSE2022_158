@@ -1,4 +1,4 @@
-# A Replication of Automated Testing of Software that Uses Machine Learning APIs
+# Artifact for Automated Testing of Software that Uses Machine Learning APIs
 
 This artifact for our paper “Automated Testing of Software that Uses Machine Learning APIs (#158)” includes source code of our testing tool Keeper, benchmark suite, user study materials and a tool demo video. We choose to claim for the Reusable and Available badges, and we hope this artifact can motivate and help future research to further tackle ML API misuses.
 
@@ -32,7 +32,7 @@ Below are details of what is included in each part:
 ## How to obtain paper's result from our tool?
 
 ### Software testing evaluation
-Our software testing evaluation results in Section 6.2 could be found in `./benchmark` folder. These results could be obtained with `./ide_plugin` and `./testing_tool` folder. Please follow `INSTALL.md` to set up environment and instructions in `./ide_plugin/README.md` to launch our tool Keeper.
+Our software testing evaluation results in Section 6.2 could be found in `./benchmark` folder. These results could be obtained with `./ide_plugin` and `./testing_tool` folder. Please follow `./INSTALL.md` to set up environment and instructions in `./ide_plugin/README.md` to launch our tool Keeper.
 
 ### User study
 Our user study results in Section 6.3 could be obtained from `./user_study` folder.
@@ -46,4 +46,4 @@ In `./user_study/survey_result.xlsx`, there are two tabs:
 
 One can use the code and data to check the statistic details and reproduce the experiments in our paper.
 
-We put detailed instructions for setting up the environment in the `INSTALL.md` file. The instructions for Keeper is in the `./ide_plugin/README.md` file.
+We put detailed instructions for setting up the environment in the `./INSTALL.md` file. The instructions for Keeper is in the `./ide_plugin/README.md` file.

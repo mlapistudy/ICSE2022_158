@@ -1,4 +1,4 @@
-# Documentation
+# Readme
 
 This folder contains VsCode IDE plugin for our testing tool.
 
@@ -11,7 +11,9 @@ const mainToolPath: string = "path/to/testing_tool/my_tool/"; // The absolution 
 const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;"; // Google credential & CVC4, please check ../INSTALL.md for details
 ```
 
-Then select `src/extension.ts`. Click "run → start debugging" on left bar or pressing F5. Then the plugin interface appeared in a new vscode window.
+Then select `src/extension.ts`. Click "run → start debugging" on left bar or pressing F5. Then the plugin interface would appear in a new VS Code window. 
+
+We provide an example input in `./plugin_example`. To use this example, please open this folder in the new VS Code window.
 
 
 ## How to use the plugin interface
