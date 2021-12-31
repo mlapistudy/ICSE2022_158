@@ -116,9 +116,9 @@ def get_label_list(is_label=True):
   label_to_mid = {}
   mid_to_label = {}
   if is_label:
-    f = open(LABEL_SRC,'r')
+    f = open(LABEL_SRC,'r', encoding="utf-8")
   else:
-    f = open(OBJECT_SRC,'r')
+    f = open(OBJECT_SRC,'r', encoding="utf-8")
   for line in f.readlines():
     label = line.replace("\n","").split(",")
     if len(label) == 2:

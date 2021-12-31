@@ -39,6 +39,8 @@ or
 /usr/bin/python3.8 -m pip --version
 ```
 
+Please make sure `python3.8` is a valid command.
+
 ### Install Google Cloud AI
 
 `Tools/API_wrappers` folder includes wrapper functions for Google Cloud AI Services.
@@ -87,7 +89,7 @@ python3.8 -m pip install transformers==4.4.2 --user
 python3.8 -m pip install wikipedia===1.4.0 --user
 python3.8 -m pip install anytree==2.5.0 --user
 python3.8 -m pip install jinja2==4.4.2 --user
-python3.8 -m pip install typing===1.4.0 --user
+python3.8 -m pip install typing==1.4.0 --user
 ```
 
 ## CVC4 constraint solver

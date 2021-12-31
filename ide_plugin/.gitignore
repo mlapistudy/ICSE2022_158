@@ -63,3 +63,4 @@ src/*.png
 out/*
 src/foo.py
 example/.vscode/*
+plugin_example/.vscode/*
