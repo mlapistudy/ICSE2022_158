@@ -164,6 +164,7 @@ Install Node.js and `npm install -g yo generator-code`, following [VSCode offici
 Install other packages:
 
 ```bash
+cd ide_plugin
 npm install @types/node
 ```
 

@@ -7,11 +7,10 @@ Open the entire folder in VS Code
 
 Change following lines to correct path in `src/userinputs.ts` and `src/inputFunction.ts`
 ```ts
-const mainToolPath: string = "path/to/testing_tool/my_tool/"; // The absolution location of ../testing_tool/my_tool/
 const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;"; // Google credential & CVC4, please check ../INSTALL.md for details
 ```
 
-Then select `src/extension.ts`. Click "run → start debugging" on left bar or pressing F5. Then the plugin interface would appear in a new VS Code window. 
+Then select `src/extension.ts`. Click "run" -> "start debugging" on top menu or pressing F5. Then the plugin interface would appear in a new VS Code window. 
 
 We provide an example input in `./plugin_example`. To use this example, please open this folder in the new VS Code window.
 

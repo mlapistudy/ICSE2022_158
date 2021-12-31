@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as vscode from 'vscode';
 import { execute, executeSync } from './utils';
 
-const mainToolPath: string = "path/to/testing_tool/my_tool/";
+const mainToolPath: string = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
 
 export async function multiStepInput(func: string, codeFile: string, linenb: number, inputslst: string[], root:string, workspace:string, userInput: string, logging: vscode.OutputChannel): Promise<any>{
 
@@ -118,8 +118,8 @@ export async function multiStepInput(func: string, codeFile: string, linenb: num
 		}
 	});
 
-	const mainToolPath: string = "path/to/testing_tool/my_tool/";
-	const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;";
+	const mainToolPath: string = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
+	const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/Users/cwan/Desktop/API_paper/ML-API-7a2899da539f.json'; export PYTHONPATH=/usr/local/share/pyshared/;";//"export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;";
 	const inputJson: string = path.join(workspace, '/.vscode/tool_json_files/user_input.json');
 	const outputJson: string = path.join(workspace, '/.vscode/tool_json_files/bugs.json');
 	const logsJson: string = path.join(workspace, '/.vscode/tool_json_files/logs.txt');
