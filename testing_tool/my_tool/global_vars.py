@@ -1,14 +1,18 @@
 #====================================
 #========= Configurable Vars ========
 #====================================
+# The maximum number of generated test cases
+TOTAL_LIMIT = 100
+
 # The threshold for judging accuracy failures. Between 0-1. Larger the stricter
 ACCURACY_THRESHOLD = 0.75
 
 # The maximum number of suggested extra labels.
 MAX_CANDIDATE = 3
 
-# The maximum number of shown failed test cases
+# The maximum number of failed test cases shown in the report
 MAX_INPUT_EXAMPLE = 3
+
 
 
 #====================================
@@ -79,9 +83,8 @@ Similar_API_mapping = {
 LIST_LEN = 3
 INLINE_FILE_LINE = 10
 # for solve*.py
-OUTPUT_PRE_SOLUTION = 20
-OUTPUT_PRE_SOLUTION_TEXT = 20
-TOTAL_LIMIT = 100
+OUTPUT_PRE_SOLUTION = max(20, TOTAL_LIMIT//5)
+OUTPUT_PRE_SOLUTION_TEXT = max(20, TOTAL_LIMIT//5)
 LOCAL_TEST = False # true then only does constaint solving
 
 GENERATE_AUDIO = True # false then only does constaint solving for audio
@@ -97,8 +100,8 @@ SOLVE_PRECONDITION = True
 # file path related
 INFO_FILE = "extra_info.txt"
 
-if True: # test only
-  PYTHON_OHTER = True
-  TOTAL_LIMIT = 10
+# if True: # test only
+#   PYTHON_OHTER = True
+#   TOTAL_LIMIT = 10
 
 
