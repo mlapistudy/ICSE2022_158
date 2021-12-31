@@ -21,3 +21,6 @@ def is_jacket(image_path):
         return True
     else:
         return False
+
+if __name__ == '__main__':
+    is_jacket("jacket.png")

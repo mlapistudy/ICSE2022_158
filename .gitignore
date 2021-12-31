@@ -8,6 +8,7 @@
 *.so
 *.pyc
 
+
 # OS generated files #
 ######################
 .DS_Store
@@ -19,5 +20,10 @@ ehthumbs.db
 Thumbs.db
 ~$*
 
-# not ready data, will add later
+
+# local testing data
 ##############
+testing_tool/my_tool/cmd_example/output.json
+testing_tool/my_tool/cmd_example/log.txt
+testing_tool/my_tool/code_extraction/empty_line.json
+testing_tool/my_tool/testing_logs

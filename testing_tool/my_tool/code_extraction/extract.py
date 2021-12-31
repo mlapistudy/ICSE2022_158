@@ -296,6 +296,10 @@ class Extractor():
     """
     if json_file_path != "":
       self.json_data = json.load(open(json_file_path))
+      if "code_file" in self.json_data.keys():
+        self.json_data["code_file"] = os.path.abspath(self.json_data["code_file"])
+      if "workspace" in self.json_data.keys():
+        self.json_data["workspace"] = os.path.abspath(self.json_data["workspace"])
     else:
       self.json_data = {}
 
@@ -445,8 +449,8 @@ class Extractor():
       f4.write(json.dumps(self.empty_lines, indent=2))
 
   def get_all_rename_info(self,
-                          current_file: str,
-                          import_lines: str) -> (dict, dict):
+                          current_file,
+                          import_lines):
     """
       Get all the module/function rename information
 
@@ -543,9 +547,9 @@ class Extractor():
     self.executed_dynamic = True
 
   def get_single_module_path(self,
-                             module: str,
-                             current_file: str,
-                             module_level=0) -> (bool, str):
+                             module,
+                             current_file,
+                             module_level=0):
     """
       Get the imported module path + whether user-defined info
       corresponding to a single module.
@@ -596,7 +600,7 @@ class Extractor():
         return (False, os.path.join(directory, module + ".py"))
 
 
-  def get_import_modules(self, import_line: str) -> (dict, dict, list, list):
+  def get_import_modules(self, import_line):
     """
       Retrieve relevant information from the specified importation line
       supports the following styles of importation:
@@ -668,7 +672,7 @@ class Extractor():
       func_def_line = self.json_data["func_def_line"]
       workspace = self.json_data["workspace"].rstrip("/")
       use_static = True
-      root = workspace
+      root = os.path.abspath(workspace)
       filenames = root.rstrip("/") + "/**/*.py"
 
       self.logger.debug(f"appending {os.path.dirname(os.path.realpath(code_file))} to system path")

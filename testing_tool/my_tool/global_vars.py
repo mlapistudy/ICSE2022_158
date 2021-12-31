@@ -83,13 +83,11 @@ OUTPUT_PRE_SOLUTION = 20
 OUTPUT_PRE_SOLUTION_TEXT = 20
 TOTAL_LIMIT = 100
 LOCAL_TEST = False # true then only does constaint solving
-# LOCAL_TEST = True # test only
 
 GENERATE_AUDIO = True # false then only does constaint solving for audio
 
 # versioning stuff
 PYTHON_OHTER = False # true when it is running on python3.6
-# PYTHON_OHTER = True # test only
 VISION_V1 = False # true if we are using v1, false if v2
 
 # for precondition
@@ -99,6 +97,8 @@ SOLVE_PRECONDITION = True
 # file path related
 INFO_FILE = "extra_info.txt"
 
-
+if True: # test only
+  PYTHON_OHTER = True
+  TOTAL_LIMIT = 10
 
 

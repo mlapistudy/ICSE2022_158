@@ -12,7 +12,7 @@ The online version of survey is at [here](https://uchicago.co1.qualtrics.com/jfe
 
 ### Result
 
-Due to IRB restriction, we only include the aggreated result of 100 participants at `./survey_result.xlsx`. It is obtained by applying `./parse_survey.py` to survey raw data. The question ID refers to following questions:
+Due to IRB restriction, we only include the aggregated result of 100 participants at `./survey_result.xlsx`. It is obtained by applying `./parse_survey.py` to survey raw data. The question ID refers to following questions:
 
 
 | Question ID | Meaning                                                      |

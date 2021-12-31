@@ -1,10 +1,12 @@
-"func_name": "is_jacket",
-"code_file": "cmd_example/check_jacket.py",
-"func_def_line": 4,
-"input_types": [
-  "string"
-],
-"API_param": [
-  "image_path"
-],
-"workspace": "cmd_example/check_jacket.py"
+{
+  "func_name": "is_jacket",
+  "code_file": "cmd_example/check_jacket.py",
+  "func_def_line": 4,
+  "input_types": [
+    "string"
+  ],
+  "API_param": [
+    "image_path"
+  ],
+  "workspace": "cmd_example/"
+}

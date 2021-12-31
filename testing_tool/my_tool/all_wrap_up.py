@@ -825,14 +825,18 @@ def from_plugin_json(json_file_path, output_path, log_file_path):
 
   e = Extractor(json_file_path)
 
-  extracted_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "extracted_function.py")
   # These are a bunch of files that could have been generated from multiple testing
+  log_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "testing_logs")
+  if not os.path.isdir(log_folder):
+    os.makedirs(log_folder)
+  extracted_file_path = os.path.join(log_folder, "extracted_function.py")
+  
   potential_files = ["__constraint_solving.py", "__cov_test.py", "__generated_test_modified.txt", "__generated_test_origin_code.txt", "__generated_test.txt", "__our_tool.py"]
   if Path(extracted_file_path).is_file():
     logger.info(f"Found extracted_function.py file at {extracted_file_path}, deleting...")
     os.remove(extracted_file_path)
   for potential_file in potential_files:
-    potential_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), potential_file)
+    potential_file_path = os.path.join(log_folder, potential_file)
     if Path(potential_file_path).is_file():
       logger.info(f"Found file to be deleted at {potential_file_path}, deleting...")
       os.remove(potential_file_path)

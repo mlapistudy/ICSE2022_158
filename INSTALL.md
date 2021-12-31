@@ -85,6 +85,9 @@ python3.8 -m pip install z3-solver==4.8.12.0 --user
 python3.8 -m pip install tensorflow==2.5.0 --user
 python3.8 -m pip install transformers==4.4.2 --user
 python3.8 -m pip install wikipedia===1.4.0 --user
+python3.8 -m pip install anytree==2.5.0 --user
+python3.8 -m pip install jinja2==4.4.2 --user
+python3.8 -m pip install typing===1.4.0 --user
 ```
 
 ## CVC4 constraint solver
@@ -162,9 +165,6 @@ Install other packages:
 
 ```bash
 npm install @types/node
-pip install anytree
-pip install jinja2
-pip install typing
 ```
 
 

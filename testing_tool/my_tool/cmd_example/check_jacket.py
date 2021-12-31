@@ -1,7 +1,7 @@
 from google.cloud import vision # google-cloud-vision==1.0.0
 import io
 
-def is_jacket(image_path="API_input"):
+def is_jacket(image_path):
     """Detects labels in the file."""
     client = vision.ImageAnnotatorClient()
 
@@ -21,3 +21,6 @@ def is_jacket(image_path="API_input"):
         return True
     else:
         return False
+
+if __name__ == '__main__':
+    is_jacket("jacket.png")
