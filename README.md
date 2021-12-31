@@ -1,12 +1,12 @@
 # Artifact for Automated Testing of Software that Uses Machine Learning APIs
 
-This artifact for our paper “Automated Testing of Software that Uses Machine Learning APIs (#158)” includes source code of our testing tool Keeper, benchmark suite, user study materials and a tool demo video. We choose to claim for the Reusable and Available badges, and we hope this artifact can motivate and help future research to further tackle ML API misuses.
+This artifact for our paper “Automated Testing of Software that Uses Machine Learning APIs (#158)” includes source code of our testing tool Keeper, benchmark suite, results, and material and a tool demo video. We choose to claim for the Reusable and Available badges, and we hope this artifact can motivate and help future research to further tackle ML API misuses.
 
 The artifact has been published as [a project on Github](https://github.com/mlapistudy/ICSE2022_158).
 
 ## What's inside the artifact:
 
-For availability and reusability, we provide source code of our tool Keeper and the instructions for setting up working environment. In addition, we provide benchmark suite, evaluation result and user study materials.
+For availability and reusability, we provide source code of our tool Keeper and the instructions for setting up working environment. In addition, we provide benchmark suite, evaluation result and user study materials & results.
 
 Below are details of what is included in each part:
 
