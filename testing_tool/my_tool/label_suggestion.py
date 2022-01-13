@@ -182,17 +182,27 @@ def search_wikidata_id_from_name(item_name):
   r = requests.get(url, headers=headers)
   soup = BeautifulSoup(r.text, 'lxml')
   for item in soup.find_all("div", class_="mw-search-result-heading"):
-    print(item)
     links = item.findAll('a')
     for a in links:
       if a['href'].startswith("/wiki/Q"):
         wiki_id = a['href'][len("/wiki/"):]
         return wiki_id
   return None
-    
 
-    # <div class="mw-search-result-heading"><a href="/wiki/Q39908" title="‎trousers‎ | ‎clothing for the legs and lower body‎" data-serp-pos="0"><span class="wb-itemlink"><span class="wb-itemlink-label" lang="en" dir="ltr">trousers</span> <span class="wb-itemlink-id">(Q39908)</span></span></a>   : <span class="wb-itemlink-description"><span class="searchmatch">pants</span></span> </div>
-  # return wiki_id
+def search_wikidata_synonms(item_name):
+  url = "https://www.wikidata.org/w/index.php?search="+str(item_name)
+  A = ("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36",
+        "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.0 Safari/537.36",
+        )
+  Agent = A[random.randrange(len(A))]
+  headers = {'user-agent': Agent}
+  r = requests.get(url, headers=headers)
+  soup = BeautifulSoup(r.text, 'lxml')
+  # return soup.select_one("span[class=wb-itemlink-label]").text
+  for item in soup.find_all("span", class_="wb-itemlink-label"):
+    return item.text
+  return None
 
 # is_label=True: label detection, False: object detection
 def is_in_label_set(keyword, is_label=True):
@@ -200,6 +210,17 @@ def is_in_label_set(keyword, is_label=True):
   keyword = keyword.lower()
   return keyword in label_to_mid.keys()
 
+# return is_in_label_set, suggested_keyword
+def is_in_label_set_suggestion(keyword, is_label=True):
+  keyword = keyword.lower()
+  if is_in_label_set(keyword, is_label=is_label):
+    return True, None
+  suggested_keyword = search_wikidata_synonms(keyword)
+  if suggested_keyword==keyword or not is_in_label_set(suggested_keyword, is_label=is_label):
+    return False, None
+  return False, suggested_keyword
+  
+  
 # use knowledge graph to find synonyms
 def infer_label_from_synonym(keyword, is_label=True, depth=1):
   label_to_mid, mid_to_label = get_label_list(is_label)
@@ -436,7 +457,6 @@ def is_in_text_set(keyword):
 
 if __name__ == '__main__':
   pass
-
 
 
 

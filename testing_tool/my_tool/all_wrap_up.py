@@ -197,10 +197,12 @@ def get_acc_bug_fix(result_group, result_groups, constraint_file, test_file):
           suggestions.add(suggest)
       elif api in ["label_detection", "object_localization"]:
         is_label = (api=="label_detection")
-        in_label = label_suggestion.is_in_label_set(if_condition, is_label=is_label)
+        # in_label = label_suggestion.is_in_label_set(if_condition, is_label=is_label)
+        in_label, new_label = label_suggestion.is_in_label_set_suggestion(if_condition, is_label=is_label)
         if not in_label:
-          # suggest = "[[Improper if-condition - 1]] The if-condition used for API [%s]'s result is problematic. Label %s is not included in the Google Vision label set." %(api, if_condition)
           suggest = "* You checked for label [%s] in this branch. However, [%s] is not a possible output of API [%s]." %(if_condition, if_condition, api)
+          if not (new_label is None):
+            suggest += " Do you mean [%s]?" % (new_label)
           suggestions.add(suggest)
 
     # Improper if-condition - infer from API result
