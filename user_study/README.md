@@ -1,23 +1,23 @@
 # README
 
-This folder contains material and aggreated result of our user study.
+This folder contains material and aggregated results of our user study.
 
-We conduct an survey to understand where bugs detected by our tool really affect software quality from end-user's perspective.  
+We conduct a survey to understand where bugs detected by our tool really affect software quality from the end-user's perspective.  
 
-## Material
+## Materials
 
 The survey includes 4 applications from our benchmark suites, each containing an *original* version and a *fixed* version.  The applications and their two versions are shown in random order to reduce potential bias.
 
-The online version of survey is at [here](https://uchicago.co1.qualtrics.com/jfe/form/SV_3NS7gNYHkmzRXIG). The preview of survey is available at `./survey_preview.pdf`. Consent form is available at `./consent_form.pdf`
+The online version of the survey is at [here](https://uchicago.co1.qualtrics.com/jfe/form/SV_3NS7gNYHkmzRXIG). The preview of the survey is available at `./survey_preview.pdf`. Consent form is available at `./consent_form.pdf`
 
-## Result
+## Results
 
 Due to IRB restriction, we only include the aggregated result of 100 participants at `./survey_result.xlsx`. It is obtained by applying `./parse_survey.py` to survey raw data. 
 
 In `./user_study/survey_result.xlsx`, there are two tabs:
 
-1. Result tab: Contains answer distribution of each survey questions. The cells for computation are colored with light blue: Row 28-32 shows the overal perference of each application example.
-2. Explaination tab: Contains explaination of each question ID:
+1. Result tab: Contains answer distribution of each survey question. The cells for computation are colored with light blue: Row 28-32 shows the overall preference of each application example.
+2. Explanation tab: Contains explanation of each question ID:
 
 
 | Question ID | Meaning                                                      |
