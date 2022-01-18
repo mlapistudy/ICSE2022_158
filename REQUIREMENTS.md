@@ -28,7 +28,7 @@ CVC4 constraint solver == 1.6
 ### Python
 Python 3.8 with following packages
 
-numpy==1.17.3
+numpy==1.19.5
 
 psutil==5.7.3 
 
@@ -42,11 +42,11 @@ google-cloud-speech==2.0.0
 
 pyttsx3==2.9.0
 
-pyaudio==0.2.11
+PyAudio==0.2.11
 
 wave==0.0.2
 
-pandas==0.23.4
+pandas==1.3.5
 
 nltk==3.3
 
@@ -67,7 +67,3 @@ transformers==4.4.2
 wikipedia==1.4.0
 
 anytree==2.8.0
-
-jinja2==2.11.3
-
-typing==3.7.4.3

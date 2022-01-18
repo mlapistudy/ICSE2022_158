@@ -8,11 +8,16 @@
 
 Our testing tool Keeper is implemented in Python3.8. It can be installed with
 
-```
+```bash
+# on linux
 sudo apt update
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.8
+
+# on mac
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install python@3.8
 ```
 
 and verfied with
@@ -36,10 +41,11 @@ pip3 --version
 or
 
 ```
-/usr/bin/python3.8 -m pip --version
+python3.8 -m pip --version
 ```
 
 Please make sure `python3.8` is a valid command.
+
 
 ### Install Google Cloud AI
 
@@ -47,14 +53,14 @@ Please make sure `python3.8` is a valid command.
 
 To install these packages:
 
-```
-/usr/bin/python3.8 -m pip install google-cloud-language==1.3.0 --user
-/usr/bin/python3.8 -m pip install google-cloud-vision==1.0.0 --user
-/usr/bin/python3.8 -m pip install google-cloud-speech==2.0.0 --user
-/usr/bin/python3.8 -m pip install google-cloud-texttospeech==2.2.0 --user
-/usr/bin/python3.8 -m pip install google-api-python-client==1.10.0 --user
-/usr/bin/python3.8 -m pip install google-auth-httplib2==0.0.4 --user
-/usr/bin/python3.8 -m pip install google-auth-oauthlib --user
+```bash
+python3.8 -m pip install google-cloud-language==1.3.0 --user
+python3.8 -m pip install google-cloud-vision==1.0.0 --user
+python3.8 -m pip install google-cloud-speech==2.0.0 --user
+python3.8 -m pip install google-cloud-texttospeech==2.2.0 --user
+python3.8 -m pip install google-api-python-client==1.10.0 --user
+python3.8 -m pip install google-auth-httplib2==0.0.4 --user
+python3.8 -m pip install google-auth-oauthlib --user
 ```
 
 To enable APIs in Google account and create credentials, please following Google official document
@@ -69,14 +75,14 @@ Everytime before executing, run `export GOOGLE_APPLICATION_CREDENTIALS=path/to/y
 
 For other packages:
 
-```
-python3.8 -m pip install numpy==1.17.3 --user
+```bash
+python3.8 -m pip install numpy==1.19.5 --user
 python3.8 -m pip install psutil==5.7.3 --user
 python3.8 -m pip install pillow==8.3.0 --user
 python3.8 -m pip install pyttsx3==2.9.0 --user
-python3.8 -m pip install pip install pyaudio --user
+python3.8 -m pip install PyAudio==0.2.11 --user
 python3.8 -m pip install wave==0.0.2 --user
-python3.8 -m pip install pandas==0.23.4 --user
+python3.8 -m pip install pandas==1.3.5 --user
 python3.8 -m pip install nltk==3.3 --user
 python3.8 -m pip install icrawler==0.6.3 --user
 python3.8 -m pip install bs4==0.0.1 --user
@@ -88,8 +94,6 @@ python3.8 -m pip install tensorflow==2.5.0 --user
 python3.8 -m pip install transformers==4.4.2 --user
 python3.8 -m pip install wikipedia===1.4.0 --user
 python3.8 -m pip install anytree==2.5.0 --user
-python3.8 -m pip install jinja2==4.4.2 --user
-python3.8 -m pip install typing==1.4.0 --user
 ```
 
 ## CVC4 constraint solver
@@ -116,7 +120,8 @@ ln -s ../../lib/pyshared/CVC4.so _CVC4.so
 cd /path/to/cvc4/CVC4_python
 export PYTHONPATH=/path/to/cvc4/CVC4_python/out_dir/share/pyshared/
 # a test to see wether the install is sucess or not
-python3.8 examples/SimpleVC.py                   # python if running default python
+# please go back to folder CVC4_python
+python3.8 examples/SimpleVC.py
 ```
 
 
@@ -150,6 +155,7 @@ export PYTHONPATH=/usr/local/share/pyshared/
 cd /usr/local/share/pyshared/
 ln -s ../../lib/pyshared/CVC4.so _CVC4.so
 # a test to see wether the install is sucess or not
+# please go back to folder CVC4_python
 python3.8 examples/SimpleVC.py
 ```
 
