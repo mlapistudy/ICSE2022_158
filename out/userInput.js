@@ -33,7 +33,7 @@ const vscode_1 = require("vscode");
 const path = __importStar(require("path"));
 const vscode = __importStar(require("vscode"));
 const utils_1 = require("./utils");
-const mainToolPath = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
+const mainToolPath = path.join(path.dirname(__dirname), "testing_tool", "my_tool");
 function multiStepInput(func, codeFile, linenb, inputslst, root, workspace, userInput, logging) {
     return __awaiter(this, void 0, void 0, function* () {
         // Selection of input types
@@ -140,12 +140,13 @@ function multiStepInput(func, codeFile, linenb, inputslst, root, workspace, user
                 logging.show();
             }
         });
-        const mainToolPath = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
-        const exportPaths = "export GOOGLE_APPLICATION_CREDENTIALS='/Users/cwan/Desktop/API_paper/ML-API-7a2899da539f.json'; export PYTHONPATH=/usr/local/share/pyshared/;"; //"export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;";
+        // const mainToolPath: string = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
+        // const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/Users/cwan/Desktop/API_paper/ML-API-7a2899da539f.json'; export PYTHONPATH=/usr/local/share/pyshared/;";//"export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;";
         const inputJson = path.join(workspace, '/.vscode/tool_json_files/user_input.json');
         const outputJson = path.join(workspace, '/.vscode/tool_json_files/bugs.json');
         const logsJson = path.join(workspace, '/.vscode/tool_json_files/logs.txt');
-        cmd = `cd ${mainToolPath}; ${userInput} ${exportPaths} python3.8 -u all_wrap_up.py --input_json ${inputJson} --output_json ${outputJson} --log_file ${logsJson}`;
+        // cmd = `cd ${mainToolPath}; ${userInput} ${exportPaths} python3.8 -u all_wrap_up.py --input_json ${inputJson} --output_json ${outputJson} --log_file ${logsJson}`;
+        cmd = `cd ${mainToolPath}; ${userInput} python3.8 -u all_wrap_up.py --input_json ${inputJson} --output_json ${outputJson} --log_file ${logsJson}`;
         utils_1.execute(cmd, ((value) => {
             if (value !== 0) {
                 vscode_1.window.showErrorMessage(`There was an error in finding failures, please check that you submitted the correct inputs and that you don't have simple syntax errors in your code. Click the button below to be redirected to the input file we use to find failures. Make sure all the information in this file is correct. You can also inspect our tool output here`, 'Input file', 'Log Messages')
