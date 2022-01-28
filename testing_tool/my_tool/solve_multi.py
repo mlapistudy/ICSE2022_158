@@ -5,7 +5,6 @@ import traceback
 import operator
 from optparse import OptionParser
 import math
-import pandas as pd # must import here, otherwise has error
 import subprocess
 
 
