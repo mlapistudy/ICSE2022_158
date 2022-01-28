@@ -91,7 +91,7 @@ GENERATE_AUDIO = True # false then only does constaint solving for audio
 
 # versioning stuff
 PYTHON_OHTER = False # true when it is running on python3.6
-VISION_V1 = False # true if we are using v1, false if v2
+VISION_V1 = True # true if we are using v1, false if v2
 
 # for precondition
 MATCH_VALUE = "match our desired output"
