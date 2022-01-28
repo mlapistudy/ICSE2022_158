@@ -31,7 +31,7 @@ export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; ex
 where details can be found in `../INSTALL.md`.
 ![Install from marketplace](demo/settings.png)
 
-Then, follow the following procedure to complete a typical testing:
+Then, follow the following procedure to complete a typical testing. At the bottom-left corner there is a "Show logs" button that can help you debug certain environment errors, if needed.
 
 1. Click on the plugin icon on the left side of your screen to reveal the plugin window. It may take several seconds.
 ![Install from marketplace](demo/demo1.jpeg)
