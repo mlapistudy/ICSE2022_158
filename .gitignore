@@ -20,7 +20,6 @@ ehthumbs.db
 Thumbs.db
 ~$*
 
-
 # local testing data
 ##############
 testing_tool/my_tool/cmd_example/output.json
