@@ -19,7 +19,7 @@ Then select `ide_plugin/src/extension.ts`. Click "run" -> "start debugging" on t
 
 ## How to launch IDE plugin from pre-packaged extension package file <a name="package_file"></a>
 
-Inside the root folder, there is also a file called `mlapitesting-0.0.1.vsix`, which can be directly run through the VS Code package manager `vsce`. Detailed can be found [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).
+Inside this folder, there is also a file called `mlapitesting-0.0.1.vsix`, which can be directly run through the VS Code package manager `vsce`. Detailed can be found [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).
 
 
 ## How to use the plugin interface
@@ -30,6 +30,8 @@ export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; ex
 ```
 where details can be found in `../INSTALL.md`.
 ![Install from marketplace](demo/settings.png)
+
+Then, follow the following procedure to complete a typical testing:
 
 1. Click on the plugin icon on the left side of your screen to reveal the plugin window. It may take several seconds.
 ![Install from marketplace](demo/demo1.jpeg)
