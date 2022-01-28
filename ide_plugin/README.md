@@ -6,23 +6,31 @@ There are two ways to run this: either directly through [source code](#source_co
 
 We provide an example input in `ide_plugin/plugin_example`. To use this example, please open this folder in the new VS Code window after plugin is launched.
 
-### How to launch IDE plugin from source code <a name="source_code"></a>
+## How to launch IDE plugin from source code <a name="source_code"></a>
 Open the **`ide_plugin/` folder** in VS Code. Please make sure it is not the parent/child folder of `ide_plugin/`, otherwise VS Code would not able to parse the project.
 
-Change following lines to correct path in `ide_plugin/src/userinputs.ts` and `ide_plugin/src/inputFunction.ts`
+<!-- Change following lines to correct path in `ide_plugin/src/userinputs.ts` and `ide_plugin/src/inputFunction.ts`
 ```ts
 const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;"; // Google credential & CVC4, please check ../INSTALL.md for details
-```
+``` -->
 
 Then select `ide_plugin/src/extension.ts`. Click "run" -> "start debugging" on the top menu or press F5. Then the plugin interface would appear in a new VS Code window. 
 
 
-### How to launch IDE plugin from pre-packaged extension package file <a name="package_file"></a>
+## How to launch IDE plugin from pre-packaged extension package file <a name="package_file"></a>
 
 Inside the root folder, there is also a file called `mlapitesting-0.0.1.vsix`, which can be directly run through the VS Code package manager `vsce`. Detailed can be found [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).
 
 
 ## How to use the plugin interface
+
+Set up environment and application prerequisites. This is the line that gets executed before any of our tool file runs. Typically, one should include (1) `export` of the google cloud credentials; (2) `export` of the path to CVC4; (3) any other commands needed to activate a virtual environment (e.g. anaconda) for the particular python environment we require, etc. This can be done by going to the **Settings** in VS Code (details can be found on the VS Code documentations [here](https://code.visualstudio.com/docs/getstarted/settings)), search for **Mlapi-testing: Set Up Environment And Application Prerequisites**, and modify the entry to be:
+```
+export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;
+```
+where details can be found in `../INSTALL.md`.
+![Install from marketplace](demo/settings.png)
+
 1. Click on the plugin icon on the left side of your screen to reveal the plugin window. It may take several seconds.
 ![Install from marketplace](demo/demo1.jpeg)
 2. Next, click on the refresh button in the upper right hand corner of the plugin window, or the "Detect Relevant Functions" button in the bottom third of the plugin window, in order to find functions that can be tested by our plugin.
