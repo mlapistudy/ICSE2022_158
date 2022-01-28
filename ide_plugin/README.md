@@ -1,8 +1,8 @@
-# Readme
+# IDE plugin
 
-This folder contains VsCode IDE plugin for our testing tool.
+This folder contains VS Code IDE plugin for our testing tool.
 
-There are two ways to run this: either directly through [source code](#source_code), or use our pre-packaged [extension package file](#package_file).
+There are two ways to launch our plugin: either directly through [source code](#source_code), or use our pre-packaged [extension package file](#package_file).
 
 We provide an example input in `ide_plugin/plugin_example`. To use this example, please open this folder in the new VS Code window after plugin is launched.
 
@@ -14,24 +14,24 @@ Open the **`ide_plugin/` folder** in VS Code. Please make sure it is not the par
 const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;"; // Google credential & CVC4, please check ../INSTALL.md for details
 ``` -->
 
-Then select `ide_plugin/src/extension.ts`. Click "run" -> "start debugging" on the top menu or press F5. Then the plugin interface would appear in a new VS Code window. 
+Then select `ide_plugin/src/extension.ts`. Click "run" -> "start debugging" on the top menu or press F5. The plugin interface would appear in a new VS Code window.
 
 
 ## How to launch IDE plugin from pre-packaged extension package file <a name="package_file"></a>
 
-Inside this folder, there is also a file called `mlapitesting-0.0.1.vsix`, which can be directly run through the VS Code package manager `vsce`. Detailed can be found [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).
+Inside this folder, there is also a file called `mlapitesting-0.0.1.vsix`, which can be directly run through the VS Code package manager `vsce` to locally install the plugin. Details can be found [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).
 
 
 ## How to use the plugin interface
 
-Set up environment and application prerequisites. This is the line that gets executed before any of our tool file runs. Typically, one should include (1) `export` of the google cloud credentials; (2) `export` of the path to CVC4; (3) any other commands needed to activate a virtual environment (e.g. anaconda) for the particular python environment we require, etc. This can be done by going to the **Settings** in VS Code (details can be found on the VS Code documentations [here](https://code.visualstudio.com/docs/getstarted/settings)), search for **Mlapi-testing: Set Up Environment And Application Prerequisites**, and modify the entry to be:
+Set up environment and application prerequisites. This is the line that gets executed before any of our analysis file runs. Typically, one should include (1) `export` the google cloud credentials; (2) `export` the path to CVC4; (3) any other commands needed to activate a virtual environment (e.g. anaconda) for the particular python environment we require, etc. This can be done by going to the **Settings** in VS Code (details can be found on the VS Code documentations [here](https://code.visualstudio.com/docs/getstarted/settings)), search for **Mlapi-testing: Set Up Environment And Application Prerequisites**, and modify the entry to include these. An example of including (1) and (2) is:
 ```
 export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;
 ```
-where details can be found in `../INSTALL.md`.
+where details can be found in `../INSTALL.md`. Note that we expect a semicolon after each statement.
 ![Install from marketplace](demo/settings.png)
 
-Then, follow the following procedure to complete a typical testing. At the bottom-left corner there is a "Show logs" button that can help you debug certain environment errors, if needed.
+Then, follow the following procedure to complete a typical testing. In the bottom-left corner, there is a "Show logs" button that can help you debug certain environment errors, if needed.
 
 1. Click on the plugin icon on the left side of your screen to reveal the plugin window. It may take several seconds.
 ![Install from marketplace](demo/demo1.jpeg)
