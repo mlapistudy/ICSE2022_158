@@ -9,11 +9,6 @@ We provide an example input in `ide_plugin/plugin_example`. To use this example,
 ## How to launch IDE plugin from source code <a name="source_code"></a>
 Open the **`ide_plugin/` folder** in VS Code. Please make sure it is not the parent/child folder of `ide_plugin/`, otherwise VS Code would not able to parse the project.
 
-<!-- Change following lines to correct path in `ide_plugin/src/userinputs.ts` and `ide_plugin/src/inputFunction.ts`
-```ts
-const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;"; // Google credential & CVC4, please check ../INSTALL.md for details
-``` -->
-
 Then select `ide_plugin/src/extension.ts`. Click "run" -> "start debugging" on the top menu or press F5. The plugin interface would appear in a new VS Code window.
 
 

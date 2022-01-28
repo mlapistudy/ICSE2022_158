@@ -11,9 +11,9 @@ For availability and reusability, we provide source code of our tool Keeper and 
 Below are details of what is included in each part:
 
 1. Source code of Keeper, containing
-   1. IDE plugin version. Located in `./ide_plugin`
+   1. IDE plugin version (also includes a packaged VS Code extension file). Located in `./ide_plugin` 
    2. Main algorithm. Located in `./testing_tool`
-2. Tool Demo video. Located in `./tool_demo.mp4`
+2. A tool demo video. Located in `./tool_demo.mp4`
 3. A benchmark suite of 63 applications and their evaluation results (Section 6.2). Located in `./benchmark`, containing
    1. Software project name
    2. GitHub link
