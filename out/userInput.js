@@ -140,12 +140,9 @@ function multiStepInput(func, codeFile, linenb, inputslst, root, workspace, user
                 logging.show();
             }
         });
-        // const mainToolPath: string = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
-        // const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/Users/cwan/Desktop/API_paper/ML-API-7a2899da539f.json'; export PYTHONPATH=/usr/local/share/pyshared/;";//"export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;";
         const inputJson = path.join(workspace, '/.vscode/tool_json_files/user_input.json');
         const outputJson = path.join(workspace, '/.vscode/tool_json_files/bugs.json');
         const logsJson = path.join(workspace, '/.vscode/tool_json_files/logs.txt');
-        // cmd = `cd ${mainToolPath}; ${userInput} ${exportPaths} python3.8 -u all_wrap_up.py --input_json ${inputJson} --output_json ${outputJson} --log_file ${logsJson}`;
         cmd = `cd ${mainToolPath}; ${userInput} python3.8 -u all_wrap_up.py --input_json ${inputJson} --output_json ${outputJson} --log_file ${logsJson}`;
         utils_1.execute(cmd, ((value) => {
             if (value !== 0) {

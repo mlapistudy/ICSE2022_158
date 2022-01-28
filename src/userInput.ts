@@ -118,12 +118,9 @@ export async function multiStepInput(func: string, codeFile: string, linenb: num
 		}
 	});
 
-	// const mainToolPath: string = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
-	// const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/Users/cwan/Desktop/API_paper/ML-API-7a2899da539f.json'; export PYTHONPATH=/usr/local/share/pyshared/;";//"export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;";
 	const inputJson: string = path.join(workspace, '/.vscode/tool_json_files/user_input.json');
 	const outputJson: string = path.join(workspace, '/.vscode/tool_json_files/bugs.json');
 	const logsJson: string = path.join(workspace, '/.vscode/tool_json_files/logs.txt');
-	// cmd = `cd ${mainToolPath}; ${userInput} ${exportPaths} python3.8 -u all_wrap_up.py --input_json ${inputJson} --output_json ${outputJson} --log_file ${logsJson}`;
 	cmd = `cd ${mainToolPath}; ${userInput} python3.8 -u all_wrap_up.py --input_json ${inputJson} --output_json ${outputJson} --log_file ${logsJson}`;
 		
 	execute(cmd, ((value: any) => {
