@@ -2,7 +2,11 @@
 
 This folder contains VsCode IDE plugin for our testing tool.
 
-## How to launch IDE plugin
+There are two ways to run this: either directly through [source code](#source_code), or use our pre-packaged [extension package file](#package_file).
+
+We provide an example input in `ide_plugin/plugin_example`. To use this example, please open this folder in the new VS Code window after plugin is launched.
+
+### How to launch IDE plugin from source code <a name="source_code"></a>
 Open the **`ide_plugin/` folder** in VS Code. Please make sure it is not the parent/child folder of `ide_plugin/`, otherwise VS Code would not able to parse the project.
 
 Change following lines to correct path in `ide_plugin/src/userinputs.ts` and `ide_plugin/src/inputFunction.ts`
@@ -12,7 +16,10 @@ const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/you
 
 Then select `ide_plugin/src/extension.ts`. Click "run" -> "start debugging" on the top menu or press F5. Then the plugin interface would appear in a new VS Code window. 
 
-We provide an example input in `ide_plugin/plugin_example`. To use this example, please open this folder in the new VS Code window.
+
+### How to launch IDE plugin from pre-packaged extension package file <a name="package_file"></a>
+
+Inside the root folder, there is also a file called `mlapitesting-0.0.1.vsix`, which can be directly run through the VS Code package manager `vsce`. Detailed can be found [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#packaging-extensions).
 
 
 ## How to use the plugin interface
