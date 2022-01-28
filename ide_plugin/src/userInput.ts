@@ -27,7 +27,7 @@ export async function multiStepInput(func: string, codeFile: string, linenb: num
 	}
 	
 	// Function creates a QuickPick, where user chooses type of parameter.
-	async function pickType(input: MultiStepInput, state: Partial<State>, index: number) {
+	async function pickType(input: MultiStepInput, state: Partial<State>, index: number) : Promise<any> {
 		const pick = await input.showQuickPick({
 			title: 'function:  '+func+', parameter: '+ inputslst[index-1],
 			placeholder: 'Pick a type for input '+ index +': '+  inputslst[index-1],
@@ -119,7 +119,7 @@ export async function multiStepInput(func: string, codeFile: string, linenb: num
 	});
 
 	const mainToolPath: string = path.join(path.dirname(path.dirname(__dirname)), "testing_tool", "my_tool");
-	const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/Users/cwan/Desktop/API_paper/ML-API-7a2899da539f.json'; export PYTHONPATH=/usr/local/share/pyshared/;";//"export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;";
+	const exportPaths: string = "";
 	const inputJson: string = path.join(workspace, '/.vscode/tool_json_files/user_input.json');
 	const outputJson: string = path.join(workspace, '/.vscode/tool_json_files/bugs.json');
 	const logsJson: string = path.join(workspace, '/.vscode/tool_json_files/logs.txt');
