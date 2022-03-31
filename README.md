@@ -4,6 +4,8 @@ This artifact for our paper “Automated Testing of Software that Uses Machine L
 
 The artifact is archived on Zenodo at https://zenodo.org/record/5914881.
 
+Our IDE plugin is also avaliable at [VS Code marketplace](https://marketplace.visualstudio.com/items?itemName=ALERTProject.mlapitesting).
+
 ## What's inside the artifact:
 
 For availability and reusability, we provide source code of our tool Keeper and the instructions for setting up the working environment. In addition, we provide benchmark suite, evaluation results and user study materials & results.
