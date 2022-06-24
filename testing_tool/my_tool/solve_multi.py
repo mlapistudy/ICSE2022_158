@@ -23,6 +23,7 @@ def get_ml_api(filename):
   used_ml_api = []
   ml_api_to_input = []
   output_to_ml_api = {}
+  If_statement_changes = {}
   with open(filename, 'r', encoding='utf8') as file_obj:
     text = file_obj.read()
   for line in text.split("\n")[::-1]:
