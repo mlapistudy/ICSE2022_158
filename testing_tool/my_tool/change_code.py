@@ -951,8 +951,9 @@ def fix_var_extract(func_content):
       if (all_names[1].name in list_vars_add_define) and (assign_cmd == line_clean_up):
         list_vars_add_define.add(all_names[0].name)
       if all_names[1].name in api_related_vars:
-        api_related_vars.add(all_names[0].name)
-        multi_api_vars_2_api[all_names[0].name] = multi_api_vars_2_api[all_names[1].name]
+        if not line.strip().startswith("if "): # if a in b:    then we should not include a as ml related
+          api_related_vars.add(all_names[0].name)
+          multi_api_vars_2_api[all_names[0].name] = multi_api_vars_2_api[all_names[1].name]
     # dict, zip, list ops
     if len(all_names)>=1:
       assign_cmd = all_names[0].name + "="
