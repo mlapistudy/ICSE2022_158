@@ -1,0 +1,133 @@
+{
+  "name": "mlapitesting",
+  "displayName": "ML API Testing",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mlapitesting.highlight",
+        "title": "ML API Testing: Highlight Lines"
+      },
+      {
+        "command": "mlapitesting.unhighlight",
+        "title": "ML API Testing: Unhighlight Lines"
+      },
+      {
+        "command": "mlapitesting.getTestableFunction",
+        "title": "ML API Testing: Get Functions related to ML APIs",
+        "icon": {
+          "light": "./resources/refresh-green.svg",
+          "dark": "./resources/refresh-green.svg"
+        }
+      },
+      {
+        "command": "mlapitesting.test",
+        "title": "Test This Function",
+        "args": ""
+      },
+      {
+        "command": "mlapitesting.logging",
+        "title": "Logging"
+      },
+      {
+        "command": "mlapitesting.refreshErrorEntry",
+        "title": "Refresh"
+      }
+    ],
+    "configuration": {
+      "title": "ML API Testing",
+      "properties": {
+        "mlapi-testing.setUpEnvironmentAndApplicationPrerequisites": {
+          "type": "string",
+          "default": "",
+          "description": "Set up the environment and prerequisites for your application."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mlapitesting-bar",
+          "title": "ML API Testing",
+          "icon": "./resources/Leo.svg"
+        }
+      ]
+    },
+    "views": {
+      "mlapitesting-bar": [
+        {
+          "id": "mlapitesting",
+          "name": "Relevant files and codes"
+        },
+        {
+          "id": "mlapiBugsVis",
+          "name": "Functions with failures"
+        },
+        {
+          "id": "mlapiwelcome",
+          "name": "Command Panel"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "mlapitesting.getTestableFunction",
+          "when": "view == mlapitesting",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "mlapitesting.test",
+          "when": "view == mlapitesting && viewItem == function",
+          "group": "inline"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "mlapiwelcome",
+        "contents": "Refresh functions that can be tested\n[Detect relevant functions](command:mlapitesting.getTestableFunction)\nThen, choose the function you want to test from above, click on the **Test This Function** inline button. Or, if you cannot see the relevant function, input one yourself: \n[Input for testable functions](command:mlapitesting.inputfunction)\nControl whether to underline detected errors here:\n[Underline detected errors](command:mlapitesting.highlight)\n[Remove underlines](command:mlapitesting.unhighlight)\nSee logging information:\n[Show logs](command:mlapitesting.logging)"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^14.18.3",
+    "@types/vscode": "^1.56.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "glob": "^7.1.7",
+    "mocha": "^8.4.0",
+    "typescript": "^4.3.2",
+    "vscode-test": "^1.5.2"
+  },
+  "dependencies": {
+    "path-equal": "^1.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/george1459/ICSE2022_158.git"}
+}

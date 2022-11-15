@@ -1,51 +1,35 @@
-# Artifact for Automated Testing of Software that Uses Machine Learning APIs
+# Readme
 
-This artifact for our paper “Automated Testing of Software that Uses Machine Learning APIs (#158)” includes source code of our testing tool Keeper, benchmark suite, results, materials and a tool demo video. We hope this artifact can motivate and help future research to further tackle ML API misuses. This artifact is awarded Reusable and Available Badge.
-
-The artifact is archived on Zenodo at https://zenodo.org/record/5914881.
+This branch contains VsCode IDE plugin for our testing tool.
 
 Our IDE plugin is also avaliable at [VS Code marketplace](https://marketplace.visualstudio.com/items?itemName=ALERTProject.mlapitesting).
 
-## What's inside the artifact:
+## How to launch IDE plugin
+Open the **`ide_plugin/` folder** in VS Code. Please make sure it is not the parent/child folder of `ide_plugin/`, otherwise VS Code would not able to parse the project.
 
-For availability and reusability, we provide source code of our tool Keeper and the instructions for setting up the working environment. In addition, we provide benchmark suite, evaluation results and user study materials & results.
+Change following lines to correct path in `ide_plugin/src/userinputs.ts` and `ide_plugin/src/inputFunction.ts`
+```ts
+const exportPaths: string = "export GOOGLE_APPLICATION_CREDENTIALS='/path/to/your/google/credential.json'; export PYTHONPATH=/usr/local/share/pyshared/;"; // Google credential & CVC4, please check ../INSTALL.md for details
+```
 
-Below are details of what is included in each part:
+Then select `ide_plugin/src/extension.ts`. Click "run" -> "start debugging" on top menu or pressing F5. Then the plugin interface would appear in a new VS Code window. 
 
-1. Source code of Keeper, containing
-   1. IDE plugin version (also includes a packaged VS Code extension file). Located in `./ide_plugin` 
-   2. Main algorithm. Located in `./testing_tool`
-2. A tool demo video. Located in `./tool_demo.mp4`
-3. A benchmark suite of 63 applications and their evaluation results (Section 6.2). Located in `./benchmark`, containing
-   1. Software project name
-   2. GitHub link
-   3. Used ML API
-   4. Number of branches
-   5. Branch coverage of Keeper and baselines (Table 3)
-   6. Failures detected by Keeper (Table 2)
-   7. The effect of accuracy threshold
-4. User study material (Section 6.3). Located in `./user_study`, containing
-   1. A survey
-   2. A consent form
-   3. A survey result summary
-   4. The script for processing raw data
+We provide an example input in `ide_plugin/plugin_example`. To use this example, please open this folder in the new VS Code window.
 
 
-## How to obtain our paper's result from our tool?
+## How to use the plugin interface
+1. Click on the plugin icon on the left side of your screen to reveal the plugin window. It may take several seconds.
+![Install from marketplace](https://github.com/george1459/ICSE2022_158/demo/demo1.jpeg)
+2. Next, click on the refresh button in the upper right hand corner of the plugin window, or the "Detect Relevant Functions" button in the bottom third of the plugin window, in order to find functions that can be tested by our plugin.
+![Install from marketplace](https://github.com/george1459/ICSE2022_158/demo/demo2.jpeg)
+3. Next, click on the function you want to test and click on the button "Test This Function" located to the right of the function name. You can also input information for a function not shown in the plugin window by clicking on the "Input for testable functions" button.
+![Install from marketplace](https://github.com/george1459/ICSE2022_158/demo/demo3.jpeg)
+4. Next, for each of the selected function's parameters, fill out what type the parameter is and whether it is used in a Machine Learning Cloud API.
+![Install from marketplace](https://github.com/george1459/ICSE2022_158/demo/demo4.jpeg)
+5. Once the types have been inputted you will see a pop-up window where you can click the "Log Messages" button. Clicking this button will allow you to see the progress of our tool while it runs. Depends on the network and number of test cases, it may take several minutes to execute.
+![Install from marketplace](https://github.com/george1459/ICSE2022_158/demo/demo5.jpeg)
+6. Congrats! Right under the view for the testable functions you will see information about any bugs or inefficiencies your selected function has. You will also see the lines of code with bugs underlined for you! If you want to remove the underlines, click the "Remove underlines" button.
+![Install from marketplace](https://github.com/george1459/ICSE2022_158/demo/demo6.jpeg)
 
-### Software testing evaluation
-Our software testing evaluation results in Section 6.2 could be found in `./benchmark` folder. These results could be obtained with `./ide_plugin` and `./testing_tool` folder. Please follow `./INSTALL.md` to set up the environment and instructions in `./ide_plugin/README.md` to launch our tool Keeper.
-
-### User study
-Our user study results in Section 6.3 could be obtained from `./user_study` folder.
-
-In `./user_study/survey_result.xlsx`, there are two tabs:
-
-1. Result tab: Contains answer distribution of each survey question. The cells for computation are colored with light blue: Row 28-32 shows the overal perference of each application example.
-2. Explaination tab: Contains explaination of each question ID.
-
-## What to do with the artifact and how?
-
-One can use the code and data to check the statistical details and reproduce the experiments in our paper.
-
-We put detailed instructions for setting up the environment in the `./INSTALL.md` file. The instructions for Keeper is in the `./ide_plugin/README.md` file.
+## GIF demo
+![Install from marketplace](https://github.com/george1459/ICSE2022_158/demo/demo-video.gif)
